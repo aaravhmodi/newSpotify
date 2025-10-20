@@ -57,7 +57,8 @@ export class SessionRecorder {
       const accessToken = localStorage.getItem('spotify_access_token');
       if (!accessToken) return;
 
-      const response = await fetch('https://api.spotify.com/v1/me/player', {
+      const apiBase = process.env.REACT_APP_SPOTIFY_API_BASE || 'https://api.spotify.com/v1';
+      const response = await fetch(`${apiBase}/me/player`, {
         headers: {
           'Authorization': `Bearer ${accessToken}`
         }

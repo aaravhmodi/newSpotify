@@ -45,7 +45,8 @@ export async function refreshAccessToken(): Promise<string | null> {
   }
 
   try {
-    const response = await fetch('https://spotifywrapped.xo.je/refresh.php', {
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://spotifywrapped.xo.je';
+    const response = await fetch(`${backendUrl}/refresh.php`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({ refresh_token: refreshToken })
