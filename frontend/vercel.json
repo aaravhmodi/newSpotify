@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "api/callback.js": {
+      "runtime": "nodejs18.x"
+    },
+    "api/refresh.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "env": {
+    "SPOTIFY_CLIENT_ID": "@spotify_client_id",
+    "SPOTIFY_CLIENT_SECRET": "@spotify_client_secret",
+    "REDIRECT_URI": "@redirect_uri",
+    "FRONTEND_URL": "@frontend_url"
+  }
+}
